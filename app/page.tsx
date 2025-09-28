@@ -15,6 +15,7 @@ import { authService, type User as UserType } from "@/lib/auth"
 import { rewardsService } from "@/lib/rewards"
 import { LeaderboardModal } from "@/components/leaderboard/leaderboard-modal"
 import { leaderboardService } from "@/lib/leaderboard"
+import Image from "next/image"
 
 export default function GameDashboard() {
   const [user, setUser] = useState<UserType | null>(null)
@@ -134,11 +135,17 @@ export default function GameDashboard() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary-foreground" />
+              <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center">
+                <Image
+                  src="/logo.jpg"
+                  alt="ZEN PLAY TO EARN Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-balance">CryptoQuest</h1>
+                <h1 className="text-2xl font-bold text-balance">ZEN PLAY TO EARN</h1>
                 <p className="text-sm text-muted-foreground">Play • Earn • Dominate</p>
               </div>
             </div>
